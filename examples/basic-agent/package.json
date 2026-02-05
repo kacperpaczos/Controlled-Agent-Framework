@@ -1,0 +1,17 @@
+{
+  "name": "basic-agent-example",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "tsx run.ts",
+    "dev": "tsx run.ts"
+  },
+  "dependencies": {
+    "@liberos/caf": "file:../../packages/caf",
+    "@liberos/caf-shared": "file:../../packages/shared"
+  },
+  "devDependencies": {
+    "tsx": "^4.0.0",
+    "typescript": "^5.6.0"
+  }
+}
