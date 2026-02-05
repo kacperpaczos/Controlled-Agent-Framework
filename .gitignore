@@ -9,3 +9,12 @@ dist/
 checkpoints/*.json
 *.db
 .turbo
+
+# Z szablonu GitHub
+*.tgz
+.npm
+.eslintcache
+.stylelintcache
+out
+.cache
+.parcel-cache
