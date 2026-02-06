@@ -52,26 +52,10 @@ export async function startDevServer(options: DevServerOptions = {}): Promise<vo
     },
   }
 
-  const { createServer } = await import("http")
-  const httpServer = createServer((req: import("http").IncomingMessage, res: import("http").ServerResponse) => {
-    let body = ""
-    req.on("data", (chunk: Buffer) => (body += chunk.toString()))
-    req.on("end", () => {
-      server
-        .fetch(
-          new Request(`http://localhost:${port}${req.url ?? "/"}`, {
-            method: req.method ?? "GET",
-            body: body || undefined,
-          })
-        )
-        .then((r) => {
-          res.writeHead(r.status, { "Content-Type": "application/json" })
-          return r.text()
-        })
-        .then((t) => res.end(t))
-    })
+  Bun.serve({
+    port,
+    fetch: server.fetch,
   })
-  httpServer.listen(port)
 
   console.log(`CAF Dev Server: http://localhost:${port}`)
   console.log(`  API: POST /api/run with { "task": "..." }`)
