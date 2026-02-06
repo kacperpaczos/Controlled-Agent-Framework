@@ -7,13 +7,13 @@ This guide will walk you through installing CAF, creating your first agent, work
 Install the core SDK package:
 
 ```bash
-npm install @liberos/caf
+bun add @liberos/caf
 ```
 
-For SQLite-backed checkpoints (optional):
+For SQLite-backed checkpoints (optional; Bun includes SQLite, add Drizzle for ORM):
 
 ```bash
-npm install drizzle-orm better-sqlite3
+bun add drizzle-orm
 ```
 
 ## Your First Agent
@@ -149,7 +149,7 @@ Sentinel is a Next.js-based GUI for visualizing agent execution in real-time.
 
 ```bash
 # Terminal 1: Run your agent with the dev HTTP server
-npx caf dev --config ./my-agent.config.ts
+bunx caf dev --config ./my-agent.config.ts
 ```
 
 ### Start Sentinel
@@ -157,8 +157,8 @@ npx caf dev --config ./my-agent.config.ts
 ```bash
 # Terminal 2: Launch the GUI
 cd packages/sentinel
-npm install
-npm run dev
+bun install
+bun run dev
 ```
 
 Open [http://localhost:3001](http://localhost:3001) to view:
@@ -174,7 +174,7 @@ Open [http://localhost:3001](http://localhost:3001) to view:
 Expose your agent to IDEs like Cursor or VSCode via the Model Context Protocol.
 
 ```bash
-npx caf mcp --config ./agent.config.ts
+bunx caf mcp --config ./agent.config.ts
 ```
 
 This starts a JSON-RPC server over STDIN/STDOUT. Configure your IDE to connect to it for agent-powered features (code analysis, refactoring suggestions, etc.).

@@ -190,11 +190,11 @@ CREATE TABLE executions (
 ### Enabling Database Storage
 
 ```typescript
-import { drizzle } from "drizzle-orm/better-sqlite3"
-import Database from "better-sqlite3"
+import { drizzle } from "drizzle-orm/bun-sqlite"
+import { Database } from "bun:sqlite"
 
 const sqlite = new Database("./data/checkpoints.db")
-const db = drizzle(sqlite)
+const db = drizzle({ client: sqlite })
 
 agent.setDatabase(db)
 ```

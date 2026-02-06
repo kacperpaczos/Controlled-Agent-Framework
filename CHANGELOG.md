@@ -61,6 +61,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Infrastructure
 
 - Monorepo with Turborepo
-- npm workspaces for package management
+- Bun workspaces for package management
 - TypeScript with strict mode
 - Drizzle ORM schemas for SQLite (checkpoints, thoughts, tool_calls, executions)

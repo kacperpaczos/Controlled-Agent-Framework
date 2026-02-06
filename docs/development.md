@@ -2,6 +2,8 @@
 
 This document describes the `dev/` folder and tools used to develop and test the CAF library (e.g. LLM integration without committing secrets).
 
+**Requirements:** The project uses [Bun](https://bun.sh) as runtime and package manager. Install Bun from [bun.sh](https://bun.sh) if needed (`curl -fsSL https://bun.sh/install | bash`).
+
 ## dev/ folder
 
 The `dev/` directory contains scripts and a minimal LLM provider for local development and testing. It is not published as a package.
@@ -42,7 +44,7 @@ From the repository root:
 
 ```bash
 # Ensure OPENROUTER_API_KEY is set (e.g. in dev/.env). The test script loads dev/.env automatically.
-npx tsx dev/test-openrouter-provider.ts
+bun run dev/test-openrouter-provider.ts
 ```
 
 Or using the shell smoke test (loads `dev/.env` when run from `dev/`):
@@ -71,9 +73,9 @@ console.log(result.content, result.usage)
 From the repo root:
 
 ```bash
-npm install
-npm run build
-cd examples/basic-agent && npm install && npm start
+bun install
+bun run build
+cd examples/basic-agent && bun install && bun start
 ```
 
 See [Getting Started](getting-started.md) and [API Reference](api-reference.md) for full documentation.

@@ -139,16 +139,16 @@ setDatabase(db: unknown): void
 Sets a Drizzle ORM database instance for checkpoint persistence.
 
 **Parameters:**
-- `db: unknown` – Drizzle database instance (e.g., from `drizzle(new Database())`)
+- `db: unknown` – Drizzle database instance (e.g., from `drizzle({ client })` with Bun SQLite)
 
 **Example:**
 
 ```typescript
-import { drizzle } from "drizzle-orm/better-sqlite3"
-import Database from "better-sqlite3"
+import { drizzle } from "drizzle-orm/bun-sqlite"
+import { Database } from "bun:sqlite"
 
 const sqlite = new Database("./data/checkpoints.db")
-const db = drizzle(sqlite)
+const db = drizzle({ client: sqlite })
 
 agent.setDatabase(db)
 ```
@@ -365,7 +365,7 @@ See [`packages/shared/src/schemas/`](../packages/shared/src/schemas/) for full d
 Starts the development HTTP server for agent monitoring.
 
 ```bash
-npx caf dev --config ./agent.config.ts
+bunx caf dev --config ./agent.config.ts
 ```
 
 **Options:**
@@ -377,7 +377,7 @@ npx caf dev --config ./agent.config.ts
 Starts the MCP (Model Context Protocol) server for IDE integration.
 
 ```bash
-npx caf mcp --config ./agent.config.ts
+bunx caf mcp --config ./agent.config.ts
 ```
 
 **Options:**

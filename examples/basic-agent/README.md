@@ -3,8 +3,8 @@
 Uruchom:
 
 ```bash
-npm install
-npm start
+bun install
+bun start
 ```
 
 Checkpointy zapisują się w `./checkpoints/`.

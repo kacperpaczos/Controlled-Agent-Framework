@@ -71,7 +71,7 @@ agent.on("agent.paused", async (e) => {
 Expose agents to IDEs (Cursor, VSCode) via Model Context Protocol:
 
 ```bash
-npx caf mcp --config ./agent.config.ts
+bunx caf mcp --config ./agent.config.ts
 ```
 
 ## Packages
@@ -87,9 +87,9 @@ npx caf mcp --config ./agent.config.ts
 ### Installation
 
 ```bash
-npm install @liberos/caf
-# Optional: SQLite support
-npm install drizzle-orm better-sqlite3
+bun add @liberos/caf
+# Optional: SQLite support (Bun has built-in SQLite; add Drizzle for ORM)
+bun add drizzle-orm
 ```
 
 ### Basic Example
@@ -120,10 +120,10 @@ await agent.restoreCheckpoint(checkpoint)
 
 ```bash
 # Terminal 1: Run agent with dev server
-npx caf dev --config ./agent.config.ts
+bunx caf dev --config ./agent.config.ts
 
 # Terminal 2: Start Sentinel GUI
-cd packages/sentinel && npm run dev
+cd packages/sentinel && bun run dev
 # Open http://localhost:3001
 ```
 
@@ -151,17 +151,17 @@ cd packages/sentinel && npm run dev
 git clone https://github.com/kacperpaczos/Controlled-Agent-Framework.git
 cd Controlled-Agent-Framework
 
-# Install dependencies
-npm install
+# Install dependencies (requires [Bun](https://bun.sh))
+bun install
 
 # Build all packages
-npm run build
+bun run build
 
 # Run example
-cd examples/basic-agent && npm install && npm start
+cd examples/basic-agent && bun install && bun start
 ```
 
-For LLM integration tests, the **`dev/`** folder provides a minimal OpenRouter-based provider and test scripts. Copy `dev/.env.example` to `dev/.env`, set `OPENROUTER_API_KEY`, then run `npx tsx dev/test-openrouter-provider.ts`. See [Development & Testing](docs/development.md) for details.
+For LLM integration tests, the **`dev/`** folder provides a minimal OpenRouter-based provider and test scripts. Copy `dev/.env.example` to `dev/.env`, set `OPENROUTER_API_KEY`, then run `bun run dev/test-openrouter-provider.ts`. See [Development & Testing](docs/development.md) for details.
 
 ## Version
 
