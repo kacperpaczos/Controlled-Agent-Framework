@@ -141,6 +141,7 @@ cd packages/sentinel && npm run dev
 - **[API Reference](docs/api-reference.md)** – Complete SDK API documentation
 - **[Checkpoint System](docs/checkpoint-system.md)** – 3-layer data architecture
 - **[Human-in-the-Loop](docs/intervention.md)** – Pause/resume, intervention API
+- **[Development & Testing](docs/development.md)** – dev/ folder, OpenRouter provider, env setup
 - **[Architecture](docs/architecture/)** – Design decisions and data flows
 
 ## Development
@@ -159,6 +160,8 @@ npm run build
 # Run example
 cd examples/basic-agent && npm install && npm start
 ```
+
+For LLM integration tests, the **`dev/`** folder provides a minimal OpenRouter-based provider and test scripts. Copy `dev/.env.example` to `dev/.env`, set `OPENROUTER_API_KEY`, then run `npx tsx dev/test-openrouter-provider.ts`. See [Development & Testing](docs/development.md) for details.
 
 ## Version
 

@@ -2,6 +2,8 @@
 
 Complete API documentation for `@liberos/caf` core classes and methods.
 
+For development-only tools (e.g. minimal OpenRouter LLM provider in `dev/`), see [Development & Testing](development.md).
+
 ## AgentEngine
 
 The main class for creating and managing AI agents.

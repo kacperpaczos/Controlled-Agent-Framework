@@ -184,6 +184,7 @@ This starts a JSON-RPC server over STDIN/STDOUT. Configure your IDE to connect t
 - **[API Reference](api-reference.md)** – Complete method and event documentation
 - **[Checkpoint System](checkpoint-system.md)** – Deep dive into 3-layer data architecture
 - **[Human-in-the-Loop](intervention.md)** – Advanced pause/resume patterns
+- **[Development & Testing](development.md)** – dev/ folder, OpenRouter provider, test scripts
 - **[Architecture](architecture/)** – Design philosophy and implementation details
 - **[Examples](../examples/)** – Sample projects demonstrating multi-step workflows
 
