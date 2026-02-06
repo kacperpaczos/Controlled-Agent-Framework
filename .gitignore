@@ -8,12 +8,14 @@ dev/.env
 .DS_Store
 *.log
 checkpoints/*.json
+examples/*/checkpoints/
 *.db
 .turbo
 
 # Z szablonu GitHub
 *.tgz
 .npm
+package-lock.json
 .eslintcache
 .stylelintcache
 out
