@@ -4,6 +4,7 @@ dist/
 *.tsbuildinfo
 .env
 .env.local
+dev/.env
 .DS_Store
 *.log
 checkpoints/*.json
